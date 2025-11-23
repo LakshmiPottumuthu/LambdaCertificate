@@ -75,3 +75,24 @@ test('Test Scenario 3', async ({ page }, testInfo) => {
   await expect(page.getByText("Thanks for contacting us, we will get back to you shortly.")).toBeVisible();
 
 });
+
+test.afterEach(async ({ page }, testInfo) => {
+  const status = testInfo.status === "passed" ? "PASSED" : "FAILED";
+  const remark = testInfo.error?.message || "Test completed";
+
+  await page.evaluate(
+    ({ title, status, remark }) => {
+      // LambdaTest injects LT_STATUS ONLY IF capabilities are correct
+      // @ts-ignore
+      if (window.LT_STATUS) {
+        // @ts-ignore
+        LT_STATUS.updateSession({
+          name: title,        // Test case name → visible in LT UI
+          status,             // PASSED / FAILED
+          remark              // Error message or "Test completed"
+        });
+      }
+    },
+    { title: testInfo.title, status, remark }
+  );
+});
