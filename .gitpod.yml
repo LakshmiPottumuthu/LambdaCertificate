@@ -1,0 +1,13 @@
+# One-click Gitpod environment for LambdaTest Playwright Assignment
+
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Install & Run Tests
+    init: |
+      npm install
+      npx playwright install
+    command: |
+      echo "Running Playwright tests on LambdaTest..."
+      npx playwright test --reporter=line
