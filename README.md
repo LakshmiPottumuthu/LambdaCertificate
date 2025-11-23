@@ -26,9 +26,6 @@ The project is fully configured to run Playwright tests on LambdaTest Cloud Grid
 ```
 ├── tests/
 │   ├── example.spec.ts
-│   └── helpers/
-│       ├── session.helper.ts
-│       └── lambda.helper.ts
 ├── playwright.config.ts
 ├── package.json
 ├── .gitpod.yml
