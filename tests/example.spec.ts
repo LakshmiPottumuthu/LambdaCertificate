@@ -1,31 +1,45 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
+import { POManager } from '../pages/POManager';
+import { URLConstants } from '../utility/constants/URLConstants';
+import Utility from '../utility/wrapper/Utility';
 
-test('Test Scenario 1', async ({ page }, testInfo) => {
+let poManager;
+let homePage;
+let simpleFormDemoPage; 
 
-  await page.goto('https://www.lambdatest.com/selenium-playground');
+test.beforeEach('navigate to page', async function({page}) 
+{
+  poManager = new POManager(page);
+  homePage = poManager.getHomePage();
+  simpleFormDemoPage = poManager.getSimpleFormPage();
 
+  await page.goto('/selenium-playground');
   await expect(page).toHaveTitle(/Selenium Grid Online | Run Selenium Test On Cloud/);
 
-  await page.getByRole('link', { name: 'Simple Form Demo' }).click();
+})
 
-  await expect(page).toHaveURL('https://www.lambdatest.com/selenium-playground/simple-form-demo');
+test('Test Scenario 1', async ({ page }) => {
+
   const message = "Welcome to LambdaTest";
-  await page.getByPlaceholder('Please enter your Message').fill(message);
-  await page.locator('#showInput').click();
 
-  await expect(page.locator("//div[@id='user-message']//p").nth(0)).toHaveText(message);
+  await homePage.simpleFormDemoLink.click();
+
+  await expect(page).toHaveURL(URLConstants.SIMPLE_FORM_DEMO_URL);
+  await simpleFormDemoPage.messageInputBox.fill(message);
+  await simpleFormDemoPage.showInputButton.click();
+
+  await expect(simpleFormDemoPage.userMessageText.nth(0)).toHaveText(message);
 
 });
 
-test('Test Scenario 2', async ({ page }, testInfo) => {
+test('Test Scenario 2', async ({ page }) => {
+  const homePage = poManager.getHomePage();
 
-  await page.goto('https://www.lambdatest.com/selenium-playground');
+  await homePage.dragAndDropSlidersLink.click();
 
-  // Click the Drag & Drop Sliders link.
-  await page.getByRole('link', { name: 'Drag & Drop Sliders' }).click();
 
-  await expect(page).toHaveURL('https://www.lambdatest.com/selenium-playground/drag-drop-range-sliders-demo');
+  await expect(page).toHaveURL(URLConstants.DRAG_DROP_SLIDER_DEMO_URL);
   
   await expect(page.locator("//div[@id='slider3']/h4")).toHaveText('Default value 15');
   await page.locator('#slider3').getByRole('slider').fill('95');
@@ -34,14 +48,13 @@ test('Test Scenario 2', async ({ page }, testInfo) => {
 
 });
 
-test('Test Scenario 3', async ({ page }, testInfo) => {
+test('Test Scenario 3', async ({ page }) => {
 
-  await page.goto('https://www.lambdatest.com/selenium-playground');
 
-  // Click the Input Form Submit link.
-  await page.getByRole('link', { name: 'Input Form Submit' }).click();
+  await homePage.inputFormSubmitLink.click();
 
-  await expect(page).toHaveURL('https://www.lambdatest.com/selenium-playground/input-form-demo');
+
+  await expect(page).toHaveURL('/selenium-playground/input-form-demo');
   
   await page.locator('button[type="submit"]').nth(1).click();
 
