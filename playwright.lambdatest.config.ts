@@ -21,7 +21,7 @@ function ltCaps(cap: any) {
 
     client: {
       name: "playwright",
-      version: "1.40.0"   // ⭐ MUST MATCH your Playwright version
+      version: "1.40.0"   
     }
   };
 

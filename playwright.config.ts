@@ -7,6 +7,7 @@ loadEnv();
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
+  workers : 3,
   reporter: "html",
   use: {
     baseURL: process.env.BASEURL,

@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 
-export class SimpleFormDemo
+export class SimpleFormDemoPage
 {
    readonly  page: Page;
    readonly  messageInputBox:Locator;
