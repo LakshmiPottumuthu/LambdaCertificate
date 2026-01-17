@@ -3,6 +3,7 @@ import { POManager } from '../pages/POManager';
 import { HomePage } from '../pages/HomePage';
 import { SimpleFormDemoPage } from '../pages/SimpleFormDemoPage';
 import { DragDropSliderPage } from '../pages/DragDropSliderPage';
+import { analyzeFailure } from '../ai/failureAnalyzer';
 
 type AppFixtures = {
   poManager: POManager;
@@ -36,6 +37,22 @@ export const test = base.extend<AppFixtures>({
   }
 
   
+});
+
+test.afterEach(async ({ page }, testInfo) => {
+  if (testInfo.status !== testInfo.expectedStatus) {
+    const errorMessage =
+      testInfo.error?.message || 'Unknown Playwright error';
+
+    const aiAnalysis = await analyzeFailure(
+      errorMessage,
+      page.url()
+    );
+
+    console.log('\n🤖 AI Failure Analysis');
+    console.log('────────────────────────');
+    console.log(aiAnalysis);
+  }
 });
 
 export { expect };
