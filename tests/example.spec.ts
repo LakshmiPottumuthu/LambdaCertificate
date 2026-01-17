@@ -2,7 +2,7 @@ import { test, expect } from "../fixtures/appFixtures";
 import { faker } from "@faker-js/faker";
 import { URLConstants } from "../utility/constants/URLConstants";
 
-test.only("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage }) => {
+test("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage }) => {
   const message = "Welcome to LambdaTest";
 
   await homePage.simpleFormDemoLink.click();
@@ -11,7 +11,7 @@ test.only("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage }) => {
   await simpleFormDemoPage.messageInputBox.fill(message);
   await simpleFormDemoPage.showInputButton.click();
 
-  await expect(simpleFormDemoPage.userMessageText.nth(0)).toHaveText("welcome to");
+  await expect(simpleFormDemoPage.userMessageText.nth(0)).toHaveText(message);
 });
 
 test("Test Scenario 2", async ({ page, homePage, dragDropSliderPage }) => {
@@ -83,5 +83,3 @@ test.afterEach(async ({ page }, testInfo) => {
     { title: testInfo.title, status, remark }
   );
 });
-
-
