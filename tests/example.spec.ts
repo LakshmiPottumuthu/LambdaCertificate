@@ -11,7 +11,7 @@ test.only("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage }) => {
   await simpleFormDemoPage.messageInputBox.fill(message);
   await simpleFormDemoPage.showInputButton.click();
 
-  await expect(simpleFormDemoPage.userMessageText.nth(0)).toHaveText("welcome");
+  await expect(simpleFormDemoPage.userMessageText.nth(0)).toHaveText("welcome to");
 });
 
 test("Test Scenario 2", async ({ page, homePage, dragDropSliderPage }) => {
