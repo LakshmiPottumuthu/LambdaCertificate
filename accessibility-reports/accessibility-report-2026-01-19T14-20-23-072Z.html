@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Test Report</title>
+    <style>
+        
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 8px 8px 0 0; }
+        .header h1 { margin: 0; font-size: 2.5rem; }
+        .header .subtitle { margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1rem; }
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 30px; }
+        .stat-card { background: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #007bff; }
+        .stat-number { font-size: 2rem; font-weight: bold; color: #007bff; margin: 0; }
+        .stat-label { color: #6c757d; font-size: 0.9rem; margin: 5px 0 0 0; }
+        .critical { border-left-color: #dc3545; }
+        .critical .stat-number { color: #dc3545; }
+        .serious { border-left-color: #fd7e14; }
+        .serious .stat-number { color: #fd7e14; }
+        .page-section { margin: 20px 30px; }
+        .page-title { font-size: 1.5rem; margin: 20px 0 10px 0; color: #333; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .violation { background: #fff; border: 1px solid #dee2e6; border-radius: 6px; margin: 15px 0; overflow: hidden; }
+        .violation-header { padding: 15px 20px; background: #f8f9fa; border-bottom: 1px solid #dee2e6; }
+        .violation-title { font-weight: bold; margin: 0 0 5px 0; }
+        .violation-impact { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+        .impact-critical { background: #dc3545; color: white; }
+        .impact-serious { background: #fd7e14; color: white; }
+        .impact-moderate { background: #ffc107; color: #212529; }
+        .impact-minor { background: #6c757d; color: white; }
+        .violation-body { padding: 20px; }
+        .violation-description { margin: 0 0 15px 0; color: #495057; line-height: 1.5; }
+        .violation-help { background: #e7f3ff; padding: 12px 15px; border-radius: 4px; margin: 10px 0; border-left: 3px solid #007bff; }
+        .help-link { color: #007bff; text-decoration: none; font-weight: 500; }
+        .help-link:hover { text-decoration: underline; }
+        .nodes-count { color: #6c757d; font-size: 0.9rem; margin: 10px 0; }
+        .element-list { margin: 10px 0; }
+        .element-item { background: #f8f9fa; padding: 8px 12px; margin: 5px 0; border-radius: 4px; border-left: 3px solid #007bff; font-family: 'Monaco', 'Consolas', monospace; font-size: 0.85rem; }
+        .element-selector { color: #e83e8c; font-weight: bold; }
+        .no-violations { text-align: center; padding: 40px; color: #28a745; font-size: 1.2rem; }
+        .timestamp { text-align: center; padding: 20px; color: #6c757d; border-top: 1px solid #eee; }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h1>🔍 Accessibility Test Report</h1>
+            <p class="subtitle">WCAG 2.1 AA Compliance Analysis</p>
+        </div>
+        
+        <div class="summary">
+            <div class="stat-card">
+                <p class="stat-number">5</p>
+                <p class="stat-label">Pages Tested</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number">15</p>
+                <p class="stat-label">Total Violations</p>
+            </div>
+            <div class="stat-card critical">
+                <p class="stat-number">15</p>
+                <p class="stat-label">Serious/Critical Issues</p>
+            </div>
+            <div class="stat-card serious">
+                <p class="stat-number">5</p>
+                <p class="stat-label">Pages with Issues</p>
+            </div>
+        </div>
+        
+            <div class="page-section">
+                <h2 class="page-title">📄 Home Page</h2>
+                <p style="color: #6c757d; margin: 0 0 20px 0;">
+                    <strong>URL:</strong> https://ecommerce-playground.lambdatest.io/ | 
+                    <strong>Tested:</strong> 19/01/2026, 14:20:20
+                </p>
+                
+                
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">color-contrast</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Elements must meet minimum color contrast ratio thresholds
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 12 elements
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">#mz-component-162614767 > .bg-primary.text-primary-inverse</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.icon-right.btn-primary.btn-block</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.type-text</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">#entry_217838 > .font-size-sm > strong</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 4.1 (foreground color: #ffffff, background color: #f22828, font size: 10.4pt (13.825px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-lg-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-md-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-0"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-1"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-2"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-active[aria-label="1 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-next[aria-label="2 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide[aria-label="3 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">image-alt</h3>
+                                <span class="violation-impact impact-critical">critical</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure <img> elements have alternative text or a role of none or presentation</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Images must have alternative text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">.mr-4</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element does not have an alt attribute<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute<br>  Element's default semantics were not overridden with role="none" or role="presentation"</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">link-name</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure links have discernible text</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Links must have discernible text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href$="#section-244630449"]</span>
+                                            <br><small style="color: #6c757d;">Fix all of the following:<br>  Element is in tab order and does not have accessible text<br><br>Fix any of the following:<br>  Element does not have text that is visible to screen readers<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <div class="page-section">
+                <h2 class="page-title">📄 Home Page</h2>
+                <p style="color: #6c757d; margin: 0 0 20px 0;">
+                    <strong>URL:</strong> https://ecommerce-playground.lambdatest.io/category/electronics | 
+                    <strong>Tested:</strong> 19/01/2026, 14:20:21
+                </p>
+                
+                
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">color-contrast</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Elements must meet minimum color contrast ratio thresholds
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 12 elements
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">#mz-component-162614767 > .bg-primary.text-primary-inverse</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.icon-right.btn-primary.btn-block</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.type-text</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">#entry_217838 > .font-size-sm > strong</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 4.1 (foreground color: #ffffff, background color: #f22828, font size: 10.4pt (13.825px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-lg-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-md-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-0"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-1"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-2"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-active[aria-label="1 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-next[aria-label="2 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide[aria-label="3 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">image-alt</h3>
+                                <span class="violation-impact impact-critical">critical</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure <img> elements have alternative text or a role of none or presentation</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Images must have alternative text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">.mr-4</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element does not have an alt attribute<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute<br>  Element's default semantics were not overridden with role="none" or role="presentation"</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">link-name</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure links have discernible text</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Links must have discernible text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href$="#section-244630449"]</span>
+                                            <br><small style="color: #6c757d;">Fix all of the following:<br>  Element is in tab order and does not have accessible text<br><br>Fix any of the following:<br>  Element does not have text that is visible to screen readers<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <div class="page-section">
+                <h2 class="page-title">📄 Home Page</h2>
+                <p style="color: #6c757d; margin: 0 0 20px 0;">
+                    <strong>URL:</strong> https://ecommerce-playground.lambdatest.io/product/123 | 
+                    <strong>Tested:</strong> 19/01/2026, 14:20:21
+                </p>
+                
+                
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">color-contrast</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Elements must meet minimum color contrast ratio thresholds
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 12 elements
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">#mz-component-162614767 > .bg-primary.text-primary-inverse</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.icon-right.btn-primary.btn-block</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.type-text</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">#entry_217838 > .font-size-sm > strong</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 4.1 (foreground color: #ffffff, background color: #f22828, font size: 10.4pt (13.825px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-lg-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-md-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-0"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-1"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-2"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-active[aria-label="1 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-next[aria-label="2 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide[aria-label="3 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">image-alt</h3>
+                                <span class="violation-impact impact-critical">critical</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure <img> elements have alternative text or a role of none or presentation</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Images must have alternative text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">.mr-4</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element does not have an alt attribute<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute<br>  Element's default semantics were not overridden with role="none" or role="presentation"</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">link-name</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure links have discernible text</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Links must have discernible text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href$="#section-244630449"]</span>
+                                            <br><small style="color: #6c757d;">Fix all of the following:<br>  Element is in tab order and does not have accessible text<br><br>Fix any of the following:<br>  Element does not have text that is visible to screen readers<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <div class="page-section">
+                <h2 class="page-title">📄 Home Page</h2>
+                <p style="color: #6c757d; margin: 0 0 20px 0;">
+                    <strong>URL:</strong> https://ecommerce-playground.lambdatest.io/cart | 
+                    <strong>Tested:</strong> 19/01/2026, 14:20:22
+                </p>
+                
+                
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">color-contrast</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Elements must meet minimum color contrast ratio thresholds
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 12 elements
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">#mz-component-162614767 > .bg-primary.text-primary-inverse</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.icon-right.btn-primary.btn-block</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.type-text</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">#entry_217838 > .font-size-sm > strong</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 4.1 (foreground color: #ffffff, background color: #f22828, font size: 10.4pt (13.825px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-lg-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-md-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-0"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-1"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-2"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-active[aria-label="1 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-next[aria-label="2 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide[aria-label="3 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">image-alt</h3>
+                                <span class="violation-impact impact-critical">critical</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure <img> elements have alternative text or a role of none or presentation</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Images must have alternative text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">.mr-4</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element does not have an alt attribute<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute<br>  Element's default semantics were not overridden with role="none" or role="presentation"</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">link-name</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure links have discernible text</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Links must have discernible text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href$="#section-244630449"]</span>
+                                            <br><small style="color: #6c757d;">Fix all of the following:<br>  Element is in tab order and does not have accessible text<br><br>Fix any of the following:<br>  Element does not have text that is visible to screen readers<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <div class="page-section">
+                <h2 class="page-title">📄 Home Page</h2>
+                <p style="color: #6c757d; margin: 0 0 20px 0;">
+                    <strong>URL:</strong> https://ecommerce-playground.lambdatest.io/checkout | 
+                    <strong>Tested:</strong> 19/01/2026, 14:20:22
+                </p>
+                
+                
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">color-contrast</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Elements must meet minimum color contrast ratio thresholds
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 12 elements
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">#mz-component-162614767 > .bg-primary.text-primary-inverse</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.icon-right.btn-primary.btn-block</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.type-text</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">#entry_217838 > .font-size-sm > strong</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 4.1 (foreground color: #ffffff, background color: #f22828, font size: 10.4pt (13.825px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-lg-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.ml-md-auto</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 11.8pt (15.7999px), font weight: bold). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-0"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #0ebac5, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-1"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href="#mz-product-tab-39218404-2"]</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.07 (foreground color: #adb5bd, background color: #ffffff, font size: 14.8pt (19.7499px), font weight: bold). Expected contrast ratio of 3:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-active[aria-label="1 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide-next[aria-label="2 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                        <div class="element-item">
+                                            <span class="element-selector">.swiper-slide[aria-label="3 / 10"][role="group"] > .article-thumb.image-top > .caption > .metadata > .timestamp</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element has insufficient color contrast of 2.37 (foreground color: #ffffff, background color: #0ebac5, font size: 10.4pt (13.825px), font weight: normal). Expected contrast ratio of 4.5:1</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">image-alt</h3>
+                                <span class="violation-impact impact-critical">critical</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure <img> elements have alternative text or a role of none or presentation</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Images must have alternative text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">.mr-4</span>
+                                            <br><small style="color: #6c757d;">Fix any of the following:<br>  Element does not have an alt attribute<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute<br>  Element's default semantics were not overridden with role="none" or role="presentation"</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="violation">
+                            <div class="violation-header">
+                                <h3 class="violation-title">link-name</h3>
+                                <span class="violation-impact impact-serious">serious</span>
+                            </div>
+                            <div class="violation-body">
+                                <p class="violation-description">Ensure links have discernible text</p>
+                                <div class="violation-help">
+                                    <strong>How to fix:</strong> Links must have discernible text
+                                    <br><a href="https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright" class="help-link" target="_blank">Learn more →</a>
+                                </div>
+                                <p class="nodes-count">
+                                    <strong>Affected elements:</strong> 1 element
+                                </p>
+                                <div class="element-list">
+                                    
+                                        <div class="element-item">
+                                            <span class="element-selector">a[href$="#section-244630449"]</span>
+                                            <br><small style="color: #6c757d;">Fix all of the following:<br>  Element is in tab order and does not have accessible text<br><br>Fix any of the following:<br>  Element does not have text that is visible to screen readers<br>  aria-label attribute does not exist or is empty<br>  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty<br>  Element has no title attribute</small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        
+        <div class="timestamp">
+            Report generated on 19/01/2026, 14:20:23
+        </div>
+    </div>
+</body>
+</html>

@@ -1,41 +1,35 @@
 import { test, expect } from "../fixtures/appFixtures";
-import AxeBuilder from '@axe-core/playwright';
+import { accessibilityPages } from "../pages/accessibilityPages";
 import { AccessibilityReporter } from "../utility/accessibility-reporter";
+import { runAccessibilityScan } from "../utility/accessibility/accessibilityScan";
 
 const reporter = new AccessibilityReporter();
 
+  
 test.describe.configure({ mode: 'serial' });
 
 test.beforeAll(async () => {
     reporter.clearTempFile();
 });
-test.only("should not have any automatically detectable accessibility issues", async ({ page, homePage }) => {
-    await homePage.simpleFormDemoLink.click();
+test('Recurring Accessibility Scan – WCAG 2.0 AAA', async ({ page }) => {
+    for (const p of accessibilityPages) {
+      await page.goto(`${p.url}`);
+  
+      const results = await runAccessibilityScan(page);
+  
+      reporter.addReport({
+        pageName: p.name,
+        pageUrl: page.url(),
+        timestamp: new Date().toISOString(),
+        violations: results.violations,
+        seriousCriticalCount: results.violations.filter(
+          v => v.impact === 'serious' || v.impact === 'critical'
+        ).length
+      });
+    }
+  });
 
-  const accessibilityScanResults = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
-
-  // Collect violations for consolidated HTML report
-  const seriousCritical = accessibilityScanResults.violations.filter((violation) =>
-      ['serious', 'critical'].includes(violation.impact || '')
-  );
-
-
-    reporter.addReport({
-    pageName: 'SimpleForm Demo Page',
-    pageUrl: page.url(),
-    timestamp: new Date().toISOString(),
-    violations: accessibilityScanResults.violations,
-    seriousCriticalCount: seriousCritical.length,
-});
-
-// Note: We collect violations for the report but allow tests to continue
-// The HTML report will show all issues found across all pages
-if (accessibilityScanResults.violations.length > 0) {
-    console.log(
-        `⚠️  Found ${accessibilityScanResults.violations.length} accessibility violations on SimpleForm Demo Page`
-    );
-}
-});
+  
 
 test.afterAll(async () => {
     reporter.generateHtmlReport();

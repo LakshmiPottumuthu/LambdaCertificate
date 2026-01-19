@@ -13,10 +13,11 @@ type AppFixtures = {
 
 export const test = base.extend<AppFixtures>({
   poManager: async ({ page }, use) => {
-    await page.goto('/selenium-playground');
-    await expect(page).toHaveTitle(
-      /Selenium Grid Online | Run Selenium Test On Cloud/
-    );
+    await page.goto('/');
+   // await page.goto('/selenium-playground');
+    // await expect(page).toHaveTitle(
+    //   /Selenium Grid Online | Run Selenium Test On Cloud/
+    // );
 
     const poManager = new POManager(page);
     await use(poManager);
