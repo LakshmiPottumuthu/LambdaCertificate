@@ -2,7 +2,7 @@ import { test, expect } from "../fixtures/appFixtures";
 import { faker } from "@faker-js/faker";
 import { URLConstants } from "../utility/constants/URLConstants";
 
-test("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage }) => {
+test.only("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage }) => {
   const message = "Welcome to LambdaTest";
 
   await homePage.simpleFormDemoLink.click();
