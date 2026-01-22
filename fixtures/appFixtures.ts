@@ -1,42 +1,32 @@
-import { test as base, expect } from '@playwright/test';
-import { POManager } from '../pages/POManager';
-import { HomePage } from '../pages/HomePage';
-import { SimpleFormDemoPage } from '../pages/SimpleFormDemoPage';
-import { DragDropSliderPage } from '../pages/DragDropSliderPage';
+import { test as base, expect } from "@playwright/test";
+import { HomePage } from "../pages/HomePage";
+import {SimpleFormDemoPage} from "../pages/SimpleFormDemoPage"
+import {DragDropSliderPage} from "../pages/DragDropSliderPage"
 
-type AppFixtures = {
-  poManager: POManager;
-  homePage: HomePage;
-  simpleFormDemoPage: SimpleFormDemoPage;
-  dragDropSliderPage: DragDropSliderPage
-};
+export const test = base.extend<{
+ homePage : HomePage,
+ simpleFormDemoPage : SimpleFormDemoPage,
+ dragDropSliderPage : DragDropSliderPage;
+}>({
 
-export const test = base.extend<AppFixtures>({
-  poManager: async ({ page }, use) => {
-    await page.goto('/');
-   // await page.goto('/selenium-playground');
-    // await expect(page).toHaveTitle(
-    //   /Selenium Grid Online | Run Selenium Test On Cloud/
-    // );
+ homePage : async({page},use) =>
+ {
+  const homePage = new HomePage(page);
+  await use(homePage);
 
-    const poManager = new POManager(page);
-    await use(poManager);
-  },
+ },
 
-  homePage: async ({ poManager }, use) => {
-    await use(poManager.getHomePage());
-  },
-
-  simpleFormDemoPage: async ({ poManager }, use) => {
-    await use(poManager.getSimpleFormPage());
-  },
-
-  dragDropSliderPage: async function({ poManager } ,use)
+ simpleFormDemoPage : async({page},use) =>
   {
-    await use(poManager.getDragDropSliderPage())
+   const simpleFormDemoPage = new SimpleFormDemoPage(page);
+   await use(simpleFormDemoPage);
+ 
+  },
+  dragDropSliderPage : async ({page},use)=>
+  {
+    const dragDropSliderPage = new DragDropSliderPage(page);
+    await use(dragDropSliderPage);
   }
-
-  
-});
+})
 
 export { expect };

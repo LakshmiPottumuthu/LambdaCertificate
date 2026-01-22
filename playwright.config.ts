@@ -38,12 +38,23 @@ export default defineConfig({
 
   projects: [
     {
+      name: "setup",
+      testMatch: /global\.setup\.ts/
+
+    },
+    {
+      name: 'cleanup',
+      testMatch: /global\.teardown\.ts/,
+    },
+    {
       name: "Local Chromium",
-      use: { ...devices["Desktop Chrome"] }
+      use: { ...devices["Desktop Chrome"] },
+      dependencies : ["setup"],
     },
     {
       name: "Local Firefox",
-      use: { ...devices["Desktop Firefox"] }
+      use: { ...devices["Desktop Firefox"] },
+      dependencies : ["setup"],
     }
   ]
 });

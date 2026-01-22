@@ -1,0 +1,94 @@
+{
+  "runId": "run-1769088101974",
+  "timestamp": "2026-01-22T13:21:41.974Z",
+  "tests": {
+    "global.setup.ts::DB connection set up": {
+      "testId": "global.setup.ts::DB connection set up",
+      "title": "DB connection set up",
+      "file": "global.setup.ts",
+      "status": "passed",
+      "duration": 449,
+      "retry": 0,
+      "steps": [
+        {
+          "title": "Launch browser",
+          "duration": 357,
+          "category": "pw:api",
+          "isSlowest": true
+        },
+        {
+          "title": "Create context",
+          "duration": 152,
+          "category": "pw:api"
+        },
+        {
+          "title": "Create page",
+          "duration": 179,
+          "category": "pw:api"
+        },
+        {
+          "title": "Close context",
+          "duration": 80,
+          "category": "pw:api"
+        }
+      ]
+    },
+    "example.spec.ts::Test Scenario 3": {
+      "testId": "example.spec.ts::Test Scenario 3",
+      "title": "Test Scenario 3",
+      "file": "example.spec.ts",
+      "status": "failed",
+      "duration": 9023,
+      "retry": 0,
+      "error": "Error: expect(locator).toHaveJSProperty(expected) failed\n\nLocator:  locator('#name')\nExpected: \"Please fill out this field.\"\nReceived: \"Please fill in this field.\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveJSProperty\" with timeout 5000ms\n  - waiting for locator('#name')\n    8 × locator resolved to <input id=\"name\" type=\"text\" name=\"name\" required=\"\" placeholder=\"Name\" class=\"w-full border border-gray-90 text-size-14 rounded mt-10 px-10 py-5\"/>\n      - unexpected value \"Please fill in this field.\"\n\n    at /home/lpottumuthu/LambdaCertificate/tests/example.spec.ts:43:39",
+      "steps": [
+        {
+          "title": "Launch browser",
+          "duration": 364,
+          "category": "pw:api"
+        },
+        {
+          "title": "Create context",
+          "duration": 140,
+          "category": "pw:api"
+        },
+        {
+          "title": "Create page",
+          "duration": 227,
+          "category": "pw:api"
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "duration": 1686,
+          "category": "pw:api",
+          "isSlowest": true
+        },
+        {
+          "title": "Navigate to \"/selenium-playground\"",
+          "duration": 810,
+          "category": "pw:api"
+        },
+        {
+          "title": "Click getByRole('link', { name: 'Input Form Submit' })",
+          "duration": 497,
+          "category": "pw:api"
+        },
+        {
+          "title": "Click locator('button[type=\"submit\"]').nth(1)",
+          "duration": 187,
+          "category": "pw:api"
+        },
+        {
+          "title": "Evaluate",
+          "duration": 3,
+          "category": "pw:api"
+        },
+        {
+          "title": "Close context",
+          "duration": 105,
+          "category": "pw:api"
+        }
+      ]
+    }
+  }
+}

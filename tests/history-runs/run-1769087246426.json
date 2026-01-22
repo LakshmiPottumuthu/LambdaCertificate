@@ -1,0 +1,93 @@
+{
+  "runId": "run-1769087246426",
+  "timestamp": "2026-01-22T13:07:26.426Z",
+  "tests": {
+    "global.setup.ts::Navigate to application": {
+      "testId": "global.setup.ts::Navigate to application",
+      "title": "Navigate to application",
+      "file": "global.setup.ts",
+      "status": "passed",
+      "duration": 486,
+      "retry": 0,
+      "steps": [
+        {
+          "title": "Launch browser",
+          "duration": 379,
+          "category": "pw:api",
+          "isSlowest": true
+        },
+        {
+          "title": "Create context",
+          "duration": 145,
+          "category": "pw:api"
+        },
+        {
+          "title": "Create page",
+          "duration": 238,
+          "category": "pw:api"
+        },
+        {
+          "title": "Close context",
+          "duration": 65,
+          "category": "pw:api"
+        }
+      ]
+    },
+    "example.spec.ts::Test Scenario 2": {
+      "testId": "example.spec.ts::Test Scenario 2",
+      "title": "Test Scenario 2",
+      "file": "example.spec.ts",
+      "status": "passed",
+      "duration": 4472,
+      "retry": 0,
+      "steps": [
+        {
+          "title": "Launch browser",
+          "duration": 365,
+          "category": "pw:api"
+        },
+        {
+          "title": "Create context",
+          "duration": 134,
+          "category": "pw:api"
+        },
+        {
+          "title": "Create page",
+          "duration": 206,
+          "category": "pw:api"
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "duration": 2197,
+          "category": "pw:api",
+          "isSlowest": true
+        },
+        {
+          "title": "Navigate to \"/selenium-playground\"",
+          "duration": 818,
+          "category": "pw:api"
+        },
+        {
+          "title": "Click getByRole('link', { name: 'Drag & Drop Sliders' })",
+          "duration": 463,
+          "category": "pw:api"
+        },
+        {
+          "title": "Fill \"95\" locator('#slider3').getByRole('slider')",
+          "duration": 23,
+          "category": "pw:api"
+        },
+        {
+          "title": "Evaluate",
+          "duration": 11,
+          "category": "pw:api"
+        },
+        {
+          "title": "Close context",
+          "duration": 44,
+          "category": "pw:api"
+        }
+      ]
+    }
+  }
+}

@@ -1,9 +1,8 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator } from "@playwright/test";
 
 export class DragDropSliderPage
 {
    
-       readonly  page: Page;
        readonly  messageInputBox:Locator;
        readonly  showInputButton:Locator;
        readonly  sliderText:Locator;
@@ -11,7 +10,6 @@ export class DragDropSliderPage
        readonly  sliderSuccess:Locator
         constructor(page)
         {
-            this.page = page;
             this.messageInputBox = page.getByPlaceholder('Please enter your Message');
             this.showInputButton = page.locator('#showInput');
             this.sliderText = page.locator("//div[@id='slider3']/h4");

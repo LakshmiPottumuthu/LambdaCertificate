@@ -1,0 +1,68 @@
+{
+  "runId": "run-1769082393122",
+  "timestamp": "2026-01-22T11:46:33.122Z",
+  "tests": {
+    "example.spec.ts::Test Scenario 1": {
+      "testId": "example.spec.ts::Test Scenario 1",
+      "title": "Test Scenario 1",
+      "file": "example.spec.ts",
+      "status": "failed",
+      "duration": 9226,
+      "retry": 0,
+      "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  locator('//div[@id=\\'user-message\\']//p').first()\nExpected: \"Welcome to LambdaTest\"\nReceived: \"\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveText\" with timeout 5000ms\n  - waiting for locator('//div[@id=\\'user-message\\']//p').first()\n    8 × locator resolved to <p id=\"message\" class=\"mt-20\"></p>\n      - unexpected value \"\"\n\n    at /home/lpottumuthu/LambdaCertificate/tests/example.spec.ts:19:59",
+      "steps": [
+        {
+          "title": "Launch browser",
+          "duration": 400,
+          "category": "pw:api"
+        },
+        {
+          "title": "Create context",
+          "duration": 115,
+          "category": "pw:api"
+        },
+        {
+          "title": "Create page",
+          "duration": 193,
+          "category": "pw:api"
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "duration": 1665,
+          "category": "pw:api",
+          "isSlowest": true
+        },
+        {
+          "title": "Navigate to \"/selenium-playground\"",
+          "duration": 893,
+          "category": "pw:api"
+        },
+        {
+          "title": "Click getByRole('link', { name: 'Simple Form Demo' })",
+          "duration": 543,
+          "category": "pw:api"
+        },
+        {
+          "title": "Fill \"Welcome to LambdaTest\" getByPlaceholder('Please enter your Message')",
+          "duration": 149,
+          "category": "pw:api"
+        },
+        {
+          "title": "Click locator('#showInput')",
+          "duration": 213,
+          "category": "pw:api"
+        },
+        {
+          "title": "Evaluate",
+          "duration": 10,
+          "category": "pw:api"
+        },
+        {
+          "title": "Close context",
+          "duration": 105,
+          "category": "pw:api"
+        }
+      ]
+    }
+  }
+}

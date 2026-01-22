@@ -1,0 +1,342 @@
+{
+  "runs": [
+    {
+      "runId": "run-1769082336758",
+      "timestamp": "2026-01-22T11:45:36.758Z"
+    },
+    {
+      "runId": "run-1769082393122",
+      "timestamp": "2026-01-22T11:46:33.122Z"
+    },
+    {
+      "runId": "run-1769084848955",
+      "timestamp": "2026-01-22T12:27:28.955Z"
+    },
+    {
+      "runId": "run-1769086418946",
+      "timestamp": "2026-01-22T12:53:38.946Z"
+    },
+    {
+      "runId": "run-1769087035420",
+      "timestamp": "2026-01-22T13:03:55.420Z"
+    },
+    {
+      "runId": "run-1769087222358",
+      "timestamp": "2026-01-22T13:07:02.358Z"
+    },
+    {
+      "runId": "run-1769087246426",
+      "timestamp": "2026-01-22T13:07:26.426Z"
+    },
+    {
+      "runId": "run-1769087389927",
+      "timestamp": "2026-01-22T13:09:49.927Z"
+    },
+    {
+      "runId": "run-1769088069815",
+      "timestamp": "2026-01-22T13:21:09.815Z"
+    },
+    {
+      "runId": "run-1769088101974",
+      "timestamp": "2026-01-22T13:21:41.974Z"
+    }
+  ],
+  "tests": {
+    "example.spec.ts::Test Scenario 1": [
+      {
+        "passed": false,
+        "duration": 30091,
+        "timestamp": "2026-01-22T11:38:16.840Z",
+        "runId": "run-1769081864293",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 9216,
+        "timestamp": "2026-01-22T11:45:47.942Z",
+        "runId": "run-1769082336758",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 9226,
+        "timestamp": "2026-01-22T11:46:44.241Z",
+        "runId": "run-1769082393122",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 30061,
+        "timestamp": "2026-01-22T12:28:06.623Z",
+        "runId": "run-1769084848955",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 30080,
+        "timestamp": "2026-01-22T13:04:32.015Z",
+        "runId": "run-1769087035420",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 8966,
+        "timestamp": "2026-01-22T13:07:15.368Z",
+        "runId": "run-1769087222358",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 5092,
+        "timestamp": "2026-01-22T13:09:59.055Z",
+        "runId": "run-1769087389927",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "global.setup.ts::Navigate to application": [
+      {
+        "passed": true,
+        "duration": 4161,
+        "timestamp": "2026-01-22T12:28:06.623Z",
+        "runId": "run-1769084848955",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 3874,
+        "timestamp": "2026-01-22T12:54:16.423Z",
+        "runId": "run-1769086418946",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 3010,
+        "timestamp": "2026-01-22T13:04:32.015Z",
+        "runId": "run-1769087035420",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 453,
+        "timestamp": "2026-01-22T13:07:15.368Z",
+        "runId": "run-1769087222358",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 486,
+        "timestamp": "2026-01-22T13:07:34.906Z",
+        "runId": "run-1769087246426",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 460,
+        "timestamp": "2026-01-22T13:09:59.055Z",
+        "runId": "run-1769087389927",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "example.spec.ts::Test Scenario 2": [
+      {
+        "passed": false,
+        "duration": 30133,
+        "timestamp": "2026-01-22T12:54:16.423Z",
+        "runId": "run-1769086418946",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 4472,
+        "timestamp": "2026-01-22T13:07:34.906Z",
+        "runId": "run-1769087246426",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "global.setup.ts::DB connection set up": [
+      {
+        "passed": true,
+        "duration": 488,
+        "timestamp": "2026-01-22T13:21:23.483Z",
+        "runId": "run-1769088069815",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 449,
+        "timestamp": "2026-01-22T13:21:54.799Z",
+        "runId": "run-1769088101974",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "example.spec.ts::Test Scenario 3": [
+      {
+        "passed": false,
+        "duration": 9805,
+        "timestamp": "2026-01-22T13:21:23.483Z",
+        "runId": "run-1769088069815",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 9023,
+        "timestamp": "2026-01-22T13:21:54.799Z",
+        "runId": "run-1769088101974",
+        "skipped": false,
+        "retry": 0
+      }
+    ]
+  },
+  "summaries": [
+    {
+      "runId": "run-1769082336758",
+      "timestamp": "2026-01-22T11:45:36.758Z",
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 1,
+      "slow": 0,
+      "duration": 11184,
+      "passRate": 0
+    },
+    {
+      "runId": "run-1769082393122",
+      "timestamp": "2026-01-22T11:46:33.122Z",
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 1,
+      "slow": 0,
+      "duration": 11119,
+      "passRate": 0
+    },
+    {
+      "runId": "run-1769084848955",
+      "timestamp": "2026-01-22T12:27:28.955Z",
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 1,
+      "slow": 1,
+      "duration": 37667,
+      "passRate": 50
+    },
+    {
+      "runId": "run-1769086418946",
+      "timestamp": "2026-01-22T12:53:38.946Z",
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 0,
+      "slow": 0,
+      "duration": 37477,
+      "passRate": 50
+    },
+    {
+      "runId": "run-1769087035420",
+      "timestamp": "2026-01-22T13:03:55.420Z",
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 1,
+      "slow": 1,
+      "duration": 36595,
+      "passRate": 50
+    },
+    {
+      "runId": "run-1769087222358",
+      "timestamp": "2026-01-22T13:07:02.358Z",
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 1,
+      "slow": 0,
+      "duration": 13010,
+      "passRate": 50
+    },
+    {
+      "runId": "run-1769087246426",
+      "timestamp": "2026-01-22T13:07:26.426Z",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 1,
+      "slow": 0,
+      "duration": 8480,
+      "passRate": 100
+    },
+    {
+      "runId": "run-1769087389927",
+      "timestamp": "2026-01-22T13:09:49.927Z",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 1,
+      "slow": 0,
+      "duration": 9128,
+      "passRate": 100
+    },
+    {
+      "runId": "run-1769088069815",
+      "timestamp": "2026-01-22T13:21:09.815Z",
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 0,
+      "slow": 0,
+      "duration": 13668,
+      "passRate": 50
+    },
+    {
+      "runId": "run-1769088101974",
+      "timestamp": "2026-01-22T13:21:41.974Z",
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 1,
+      "slow": 0,
+      "duration": 12825,
+      "passRate": 50
+    }
+  ],
+  "runFiles": {
+    "run-1769082336758": "./history-runs/run-1769082336758.json",
+    "run-1769082393122": "./history-runs/run-1769082393122.json",
+    "run-1769084848955": "./history-runs/run-1769084848955.json",
+    "run-1769086418946": "./history-runs/run-1769086418946.json",
+    "run-1769087035420": "./history-runs/run-1769087035420.json",
+    "run-1769087222358": "./history-runs/run-1769087222358.json",
+    "run-1769087246426": "./history-runs/run-1769087246426.json",
+    "run-1769087389927": "./history-runs/run-1769087389927.json",
+    "run-1769088069815": "./history-runs/run-1769088069815.json",
+    "run-1769088101974": "./history-runs/run-1769088101974.json"
+  }
+}
