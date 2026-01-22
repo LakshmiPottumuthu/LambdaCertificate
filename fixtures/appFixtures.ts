@@ -3,11 +3,13 @@ import { HomePage } from "../pages/HomePage";
 import {SimpleFormDemoPage} from "../pages/SimpleFormDemoPage"
 import {DragDropSliderPage} from "../pages/DragDropSliderPage"
 
-export const test = base.extend<{
- homePage : HomePage,
- simpleFormDemoPage : SimpleFormDemoPage,
- dragDropSliderPage : DragDropSliderPage;
-}>({
+export interface Fixtures {
+  homePage : HomePage,
+  simpleFormDemoPage : SimpleFormDemoPage,
+  dragDropSliderPage : DragDropSliderPage;
+}
+
+export const test = base.extend<Fixtures>({
 
  homePage : async({page},use) =>
  {
