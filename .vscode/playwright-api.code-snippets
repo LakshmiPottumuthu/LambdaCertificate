@@ -1,0 +1,94 @@
+{
+    "API Test": {
+      "prefix": "api:test",
+      "body": [
+        "test('${1:API test name}', async ({ request }) => {",
+        "  const response = await request.${2:get}('${3:/endpoint}');",
+        "  expect(response.ok()).toBeTruthy();",
+        "});"
+      ],
+      "description": "API test"
+    },
+  
+    "API Describe Block": {
+      "prefix": "api:describe",
+      "body": [
+        "test.describe('${1:API Feature}', () => {",
+        "  test('${2:Scenario}', async ({ request }) => {",
+        "    ${3:// API steps}",
+        "  });",
+        "});"
+      ],
+      "description": "API describe block"
+    },
+  
+    "API GET Request": {
+      "prefix": "api:get",
+      "body": [
+        "const response = await request.get('${1:/endpoint}');",
+        "expect(response.status()).toBe(${2:200});",
+        "const body = await response.json();"
+      ],
+      "description": "API GET request"
+    },
+  
+    "API POST Request": {
+      "prefix": "api:post",
+      "body": [
+        "const response = await request.post('${1:/endpoint}', {",
+        "  data: ${2:payload}",
+        "});",
+        "expect(response.status()).toBe(${3:201});",
+        "const body = await response.json();"
+      ],
+      "description": "API POST request"
+    },
+  
+    "API Auth Header": {
+      "prefix": "api:auth",
+      "body": [
+        "const response = await request.get('${1:/endpoint}', {",
+        "  headers: {",
+        "    Authorization: `Bearer ${2:token}`",
+        "  }",
+        "});"
+      ],
+      "description": "API auth header"
+    },
+  
+    "API Expect Property": {
+      "prefix": "api:expectProp",
+      "body": [
+        "expect(body).toHaveProperty('${1:property}');"
+      ],
+      "description": "API expect property"
+    },
+  
+    "API Expect Value": {
+      "prefix": "api:expectValue",
+      "body": [
+        "expect(body.${1:key}).toBe('${2:value}');"
+      ],
+      "description": "API expect value"
+    },
+  
+    "API Schema Validation": {
+      "prefix": "api:schema",
+      "body": [
+        "expect(body).toMatchObject({",
+        "  ${1:key}: ${2:value}",
+        "});"
+      ],
+      "description": "API schema validation"
+    },
+  
+    "API Save Response": {
+      "prefix": "api:save",
+      "body": [
+        "const ${1:responseBody} = await response.json();",
+        "console.log(${1:responseBody});"
+      ],
+      "description": "API save response"
+    }
+  }
+  

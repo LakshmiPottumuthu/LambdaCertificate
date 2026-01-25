@@ -1,0 +1,131 @@
+{
+    "UI Test": {
+      "prefix": "ui:test",
+      "body": [
+        "test('${1:UI test name}', async ({ page }) => {",
+        "  await page.goto('${2:https://example.com}');",
+        "",
+        "  ${3:// UI steps}",
+        "});"
+      ],
+      "description": "UI Playwright test"
+    },
+  
+    "UI Describe Block": {
+      "prefix": "ui:describe",
+      "body": [
+        "test.describe('${1:Feature}', () => {",
+        "  test('${2:Scenario}', async ({ page }) => {",
+        "    ${3:// steps}",
+        "  });",
+        "});"
+      ],
+      "description": "UI describe block"
+    },
+  
+    "UI beforeEach": {
+      "prefix": "ui:before",
+      "body": [
+        "test.beforeEach(async ({ page }) => {",
+        "  ${1:// setup}",
+        "});"
+      ],
+      "description": "UI beforeEach hook"
+    },
+  
+    "UI Page Object": {
+      "prefix": "ui:po",
+      "body": [
+        "import { Page, Locator } from '@playwright/test';",
+        "",
+        "export class ${1:PageName} {",
+        "  readonly page: Page;",
+        "  readonly ${2:element}: Locator;",
+        "",
+        "  constructor(page: Page) {",
+        "    this.page = page;",
+        "    this.${2:element} = page.locator('${3:selector}');",
+        "  }",
+        "",
+        "  async ${4:action}() {",
+        "    await this.${2:element}.click();",
+        "  }",
+        "}"
+      ],
+      "description": "UI Page Object Model"
+    },
+  
+    "UI Custom Fixture": {
+      "prefix": "ui:fixture",
+      "body": [
+        "import { test as base } from '@playwright/test';",
+        "import { ${2:HomePage} } from '../pages/${2:HomePage}';",
+        "",
+        "type Fixtures = {",
+        "  ${1:homePage}: ${2:HomePage};",
+        "};",
+        "",
+        "export const test = base.extend<Fixtures>({",
+        "  ${1:homePage}: async ({ page }, use) => {",
+        "    const ${1:homePage} = new ${2:HomePage}(page);",
+        "    await use(${1:homePage});",
+        "  }",
+        "});",
+        "",
+        "export { expect } from '@playwright/test';"
+      ],
+      "description": "UI custom fixture"
+    },
+  
+    "UI Expect Visible": {
+      "prefix": "ui:expectVisible",
+      "body": [
+        "await expect(${1:locator}).toBeVisible();"
+      ],
+      "description": "UI expect visible"
+    },
+  
+    "UI Expect Text": {
+      "prefix": "ui:expectText",
+      "body": [
+        "await expect(${1:locator}).toHaveText('${2:text}');"
+      ],
+      "description": "UI expect text"
+    },
+  
+    "UI Login Steps": {
+      "prefix": "ui:login",
+      "body": [
+        "await page.fill('${1:#email}', ${2:email});",
+        "await page.fill('${3:#password}', ${4:password});",
+        "await page.click('${5:button[type=submit]}');"
+      ],
+      "description": "UI login steps"
+    },
+  
+    "UI Wait for API": {
+      "prefix": "ui:waitApi",
+      "body": [
+        "await page.waitForResponse(res =>",
+        "  res.url().includes('${1:api}') && res.status() === ${2:200}",
+        ");"
+      ],
+      "description": "UI wait for API response"
+    },
+  
+    "UI Screenshot": {
+      "prefix": "ui:screenshot",
+      "body": [
+        "await page.screenshot({ path: '${1:screenshot}.png', fullPage: true });"
+      ],
+      "description": "UI screenshot"
+    },
+    "UI Expect URL": {
+      "prefix": "ui:expectURL",
+      "body": [
+        "await expect(page).toHaveURL('${1:text}');"
+      ],
+      "description": "UI expect text"
+    },
+  }
+  

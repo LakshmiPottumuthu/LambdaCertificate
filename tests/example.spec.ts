@@ -18,8 +18,6 @@ test("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage }) => {
   await expect(page).toHaveURL(URLConstants.SIMPLE_FORM_DEMO_URL);
   await simpleFormDemoPage.messageInputBox.fill(message);
   await simpleFormDemoPage.showInputButton.click();
-
- // await expect(simpleFormDemoPage.userMessageText.nth(0)).toHaveText(message);
 });
 
 test("Test Scenario 2", async ({ page, homePage, dragDropSliderPage }) => {
