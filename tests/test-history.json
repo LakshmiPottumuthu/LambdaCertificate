@@ -1,10 +1,6 @@
 {
   "runs": [
     {
-      "runId": "run-1769082336758",
-      "timestamp": "2026-01-22T11:45:36.758Z"
-    },
-    {
       "runId": "run-1769082393122",
       "timestamp": "2026-01-22T11:46:33.122Z"
     },
@@ -39,6 +35,10 @@
     {
       "runId": "run-1769088101974",
       "timestamp": "2026-01-22T13:21:41.974Z"
+    },
+    {
+      "runId": "run-1769375686928",
+      "timestamp": "2026-01-25T21:14:46.928Z"
     }
   ],
   "tests": {
@@ -96,6 +96,22 @@
         "duration": 5092,
         "timestamp": "2026-01-22T13:09:59.055Z",
         "runId": "run-1769087389927",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 13138,
+        "timestamp": "2026-01-25T21:15:08.367Z",
+        "runId": "run-1769375686928",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 17405,
+        "timestamp": "2026-01-25T21:15:08.367Z",
+        "runId": "run-1769375686928",
         "skipped": false,
         "retry": 0
       }
@@ -184,6 +200,14 @@
         "runId": "run-1769088101974",
         "skipped": false,
         "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 339,
+        "timestamp": "2026-01-25T21:15:08.367Z",
+        "runId": "run-1769375686928",
+        "skipped": false,
+        "retry": 0
       }
     ],
     "example.spec.ts::Test Scenario 3": [
@@ -206,18 +230,6 @@
     ]
   },
   "summaries": [
-    {
-      "runId": "run-1769082336758",
-      "timestamp": "2026-01-22T11:45:36.758Z",
-      "total": 1,
-      "passed": 0,
-      "failed": 1,
-      "skipped": 0,
-      "flaky": 1,
-      "slow": 0,
-      "duration": 11184,
-      "passRate": 0
-    },
     {
       "runId": "run-1769082393122",
       "timestamp": "2026-01-22T11:46:33.122Z",
@@ -325,10 +337,21 @@
       "slow": 0,
       "duration": 12825,
       "passRate": 50
+    },
+    {
+      "runId": "run-1769375686928",
+      "timestamp": "2026-01-25T21:14:46.928Z",
+      "total": 3,
+      "passed": 1,
+      "failed": 2,
+      "skipped": 0,
+      "flaky": 2,
+      "slow": 0,
+      "duration": 21439,
+      "passRate": 33
     }
   ],
   "runFiles": {
-    "run-1769082336758": "./history-runs/run-1769082336758.json",
     "run-1769082393122": "./history-runs/run-1769082393122.json",
     "run-1769084848955": "./history-runs/run-1769084848955.json",
     "run-1769086418946": "./history-runs/run-1769086418946.json",
@@ -337,6 +360,7 @@
     "run-1769087246426": "./history-runs/run-1769087246426.json",
     "run-1769087389927": "./history-runs/run-1769087389927.json",
     "run-1769088069815": "./history-runs/run-1769088069815.json",
-    "run-1769088101974": "./history-runs/run-1769088101974.json"
+    "run-1769088101974": "./history-runs/run-1769088101974.json",
+    "run-1769375686928": "./history-runs/run-1769375686928.json"
   }
 }

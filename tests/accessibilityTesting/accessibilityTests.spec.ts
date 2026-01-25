@@ -1,7 +1,7 @@
-import { test } from "../fixtures/appFixtures";
-import { accessibilityPages } from "../pages/accessibilityPages";
-import { AccessibilityReporter } from "../utility/accessibility-reporter";
-import { runAccessibilityScan } from "../utility/accessibility/accessibilityScan";
+import { test } from "../../fixtures/appFixtures";
+import { accessibilityPages } from "../../pages/accessibilityPages";
+import { AccessibilityReporter } from "../../utility/accessibility-reporter";
+import { runAccessibilityScan } from "../../utility/accessibility/accessibilityScan";
 
 const reporter = new AccessibilityReporter();
 

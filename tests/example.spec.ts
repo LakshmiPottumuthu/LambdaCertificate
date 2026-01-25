@@ -11,9 +11,13 @@ test.beforeEach("Navigate to application",async({page})=>{
        );
 
 });
-test("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage }) => {
+test.only("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage, prepareVisual }) => {
   const message = "Welcome to LambdaTest";
   await homePage.simpleFormDemoLink.click();
+  await prepareVisual();  
+  await expect(homePage.root).toHaveScreenshot("home.png", {
+    mask: homePage.getVisualMask()
+  });
 
   await expect(page).toHaveURL(URLConstants.SIMPLE_FORM_DEMO_URL);
   await simpleFormDemoPage.messageInputBox.fill(message);
