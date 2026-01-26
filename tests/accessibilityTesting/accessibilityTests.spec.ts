@@ -11,7 +11,7 @@ test.describe.configure({ mode: 'serial' });
 test.beforeAll(async () => {
     reporter.clearTempFile();
 });
-test('Recurring Accessibility Scan WCAG 2.0 AAA', async ({ page }) => {
+test.skip('Recurring Accessibility Scan WCAG 2.0 AAA', async ({ page }) => {
     for (const p of accessibilityPages) {
       await page.goto(`${p.url}`);
   

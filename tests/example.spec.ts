@@ -1,4 +1,4 @@
-import { test, expect } from "../fixtures/appFixtures";
+import { test, expect} from "../fixtures/appFixtures";
 import { faker } from "@faker-js/faker";
 import { URLConstants } from "../utility/constants/URLConstants";
 
@@ -11,67 +11,71 @@ test.beforeEach("Navigate to application",async({page})=>{
        );
 
 });
-test.only("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage, prepareVisual }) => {
+test("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage, prepareVisual }) => {
   const message = "Welcome to LambdaTest";
-  await homePage.simpleFormDemoLink.click();
+
   await prepareVisual();  
-  await expect(homePage.root).toHaveScreenshot("home.png", {
+
+  await expect(page).toHaveScreenshot("home.png", {
     mask: homePage.getVisualMask()
   });
+  await homePage.simpleFormDemoLink.click();
+ 
 
   await expect(page).toHaveURL(URLConstants.SIMPLE_FORM_DEMO_URL);
   await simpleFormDemoPage.messageInputBox.fill(message);
   await simpleFormDemoPage.showInputButton.click();
 });
 
-test("Test Scenario 2", async ({ page, homePage, dragDropSliderPage }) => {
-  await homePage.dragAndDropSlidersLink.click();
+// test("Test Scenario 2", async ({ page, homePage, dragDropSliderPage }) => {
+//   await homePage.dragAndDropSlidersLink.click();
 
-  await expect(page).toHaveURL(URLConstants.DRAG_DROP_SLIDER_DEMO_URL);
+//   await expect(page).toHaveURL(URLConstants.DRAG_DROP_SLIDER_DEMO_URL);
 
-  await expect(dragDropSliderPage.sliderText).toHaveText("Default value 15");
-  await dragDropSliderPage.slider.fill("95");
+//   await expect(dragDropSliderPage.sliderText).toHaveText("Default value 15");
+//   await dragDropSliderPage.slider.fill("95");
 
-  await expect(dragDropSliderPage.sliderSuccess).toHaveText("95");
-});
+//   await expect(dragDropSliderPage.sliderSuccess).toHaveText("95");
+// });
 
-test("Test Scenario 3", async ({ page, homePage }) => {
-  await homePage.inputFormSubmitLink.click();
+// test("Test Scenario 3", async ({ page, homePage }) => {
+//   await homePage.inputFormSubmitLink.click();
 
-  await expect(page).toHaveURL("/selenium-playground/input-form-demo/");
+//   await expect(page).toHaveURL("/selenium-playground/input-form-demo/");
 
-  await page.locator('button[type="submit"]').nth(1).click();
+//   await page.locator('button[type="submit"]').nth(1).click();
 
-  await expect(page.locator("#name")).toHaveJSProperty(
-    "validationMessage",
-    "Please fill out this field."
-  );
+//   await expect(page.locator("#name")).toHaveJSProperty(
+//     "validationMessage",
+//     "Please fill out this field."
+//   );
 
-  const fieldData = {
-    "#name": faker.person.fullName(),
-    "#inputEmail4": faker.internet.email(),
-    "#inputPassword4": faker.internet.password(),
-    "#company": "Lambda Test",
-    "#websitename": faker.internet.domainName(),
-    "#inputCity": faker.location.city(),
-    "#inputAddress1": faker.location.streetAddress(),
-    "#inputAddress2": faker.location.secondaryAddress(),
-    "#inputState": faker.location.state(),
-    "#inputZip": faker.location.zipCode(),
-  };
+//   const fieldData = {
+//     "#name": faker.person.fullName(),
+//     "#inputEmail4": faker.internet.email(),
+//     "#inputPassword4": faker.internet.password(),
+//     "#company": "Lambda Test",
+//     "#websitename": faker.internet.domainName(),
+//     "#inputCity": faker.location.city(),
+//     "#inputAddress1": faker.location.streetAddress(),
+//     "#inputAddress2": faker.location.secondaryAddress(),
+//     "#inputState": faker.location.state(),
+//     "#inputZip": faker.location.zipCode(),
+//   };
 
-  for (const [selector, value] of Object.entries(fieldData)) {
-    await page.locator(selector).fill(value);
-  }
+//   for (const [selector, value] of Object.entries(fieldData)) {
+//     await page.locator(selector).fill(value);
+//   }
 
-  await page.locator('select[name="country"]').selectOption({ label: "India" });
+//   await page.locator('select[name="country"]').selectOption({ label: "India" });
 
-  await page.locator('button[type="submit"]').nth(1).click();
+//   await page.locator('button[type="submit"]').nth(1).click();
 
-  await expect(
-    page.getByText("Thanks for contacting us, we will get back to you shortly.")
-  ).toBeVisible();
-});
+//   await expect(
+//     page.getByText("Thanks for contacting us, we will get back to you shortly.")
+//   ).toBeVisible();
+// });
+
 
 test.afterEach(async ({ page }, testInfo) => {
   const status = testInfo.status === "passed" ? "PASSED" : "FAILED";

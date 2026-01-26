@@ -123,9 +123,16 @@
     "UI Expect URL": {
       "prefix": "ui:expectURL",
       "body": [
-        "await expect(page).toHaveURL('${1:text}');"
+        "await expect(page).toHaveURL('${1:URL}');"
       ],
       "description": "UI expect text"
+    },
+    "UI Expect Title": {
+      "prefix": "ui:expectTitle",
+      "body": [
+        "await expect(page).toHaveTitle('${1:Title}');"
+      ],
+      "description": "UI expect title"
     },
   }
   

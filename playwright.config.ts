@@ -34,7 +34,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.BASEURL,
     headless: false, 
-    storageState: "auth/user.storage.json"
+    //storageState: "auth/user.storage.json"
    // trace: "on-first-retry",
   },
 
