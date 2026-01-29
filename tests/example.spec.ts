@@ -11,10 +11,8 @@ test.beforeEach("Navigate to application",async({page})=>{
        );
 
 });
-test("Test Scenario 1", async ({ page, homePage, simpleFormDemoPage, prepareVisual }) => {
+test("home", async ({ page, homePage, simpleFormDemoPage }) => {
   const message = "Welcome to LambdaTest";
-
-  await prepareVisual();  
 
   await expect(page).toHaveScreenshot("home.png", {
     mask: homePage.getVisualMask()

@@ -37,6 +37,13 @@ export default defineConfig({
     //storageState: "auth/user.storage.json"
    // trace: "on-first-retry",
   },
+  expect: {
+    toHaveScreenshot: {
+      pathTemplate: 'tests/visual-snapshots/{browser}/{testName}.png',
+      threshold: 0.2, // pixel difference tolerance
+      maxDiffPixelRatio: 0.01
+    }
+  },
 
   projects: [
     {
