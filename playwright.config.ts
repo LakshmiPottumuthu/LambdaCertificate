@@ -56,7 +56,7 @@ export default defineConfig({
       testMatch: /global\.teardown\.ts/,
     },
     {
-      name: "Local Chromium",
+      name: "LocalChromium",
       use: { ...devices["Desktop Chrome"] },
       dependencies : ["setup"],
     },
