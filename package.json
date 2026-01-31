@@ -3,7 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "COMMENT":"TIP: Define NPM scripts for common test execution pattern",
+  "RUN":"Run with: npm run <script-name>(eg: npm run test:ci)",
+  "scripts": {
+    "test" : "npx playwright test --project=chromium",
+    "test:ci" : "npx playwright test --project=chromium --workers=1",
+    "test:flaky" : "npx playwright test --project=chromium --repeat-each=3",
+    "test:debug" : "npx playwright test --project=chromium --debug",
+    "test:ui" : "npx playwright test --project=chromium --ui",
+    "test:smoke" : "npx playwright test --grep @smoke --project=chromium",
+    "test:sanity" : "npx playwright test --grep @sanity --project=chromium ",
+    "test:api" : "npx playwright test --grep @Api --project=chromium ",
+    "test:regression" : "npx playwright test --grep @Regression --project=chromium ",
+    "test:isolated" : "npx playwright test --grep @Isolated --project=chromium --workers=1",
+    "fullTest": "npx playwright test"
+
+
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
