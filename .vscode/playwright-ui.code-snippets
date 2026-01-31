@@ -134,5 +134,37 @@
       ],
       "description": "UI expect title"
     },
+    "UI Promise All": {
+  "prefix": "ui:promiseAll",
+  "body": [
+    "await Promise.all([",
+    "  ${1:promise1},",
+    "  ${2:promise2}",
+    "]);"
+  ],
+  "description": "UI Promise.all wrapper"
+},
+"UI Promise All Click Navigation": {
+  "prefix": "ui:promiseClickNav",
+  "body": [
+    "await Promise.all([",
+    "  page.waitForNavigation({ waitUntil: 'networkidle' }),",
+    "  ${1:locator}.click()",
+    "]);"
+  ],
+  "description": "UI Promise.all for click + navigation"
+},
+"UI Promise All API": {
+  "prefix": "ui:promiseApi",
+  "body": [
+    "const [${1:response}] = await Promise.all([",
+    "  page.waitForResponse(${2:responseUrl}),",
+    "  ${3:action}",
+    "]);"
+  ],
+  "description": "UI Promise.all with API response wait"
+}
+
+
   }
   
