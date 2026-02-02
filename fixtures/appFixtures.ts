@@ -13,6 +13,27 @@ export interface Fixtures {
 
 export const test = base.extend<Fixtures>({
 
+  page: async ({ page }, use) => {
+    // Runs on every navigation (before app JS)
+    await page.addInitScript(() => {
+      window.addEventListener('load', () => {
+        (window as any).removeObstructionsForTestIfNeeded?.();
+      });
+    });
+
+    // Safety net before actions
+    await page.addLocatorHandler(
+      page.locator('body'),
+      async () => {
+        await page.evaluate(() =>
+          (window as any).removeObstructionsForTestIfNeeded?.()
+        );
+      },
+      { noWaitAfter: true }
+    );
+
+    await use(page);
+  },
  homePage : async({page},use) =>
  {
   const homePage = new HomePage(page);
