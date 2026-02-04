@@ -52,11 +52,11 @@ export const test = base.extend<Fixtures>({
     const dragDropSliderPage = new DragDropSliderPage(page);
     await use(dragDropSliderPage);
   },
-  prepareVisual: async ({ page }, use) => {
+  prepareVisual: [async ({ page }, use) => {
     await use(async () => {
       await VisualHelper.preparePage(page);
     });
-  }
+  },{auto : true}]
 })
 
 export { expect };
