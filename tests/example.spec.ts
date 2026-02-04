@@ -45,7 +45,7 @@ test("Test Scenario 3", async ({ page, homePage }) => {
 
   await expect(page.locator("#name")).toHaveJSProperty(
     "validationMessage",
-    "Please fill in this field."
+    "Please fill out this field."
   );
 
   const fieldData = {
