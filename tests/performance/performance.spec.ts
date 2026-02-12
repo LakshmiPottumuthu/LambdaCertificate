@@ -11,7 +11,14 @@ import path from "path";
  * - Prefers local k6 binary; falls back to Docker image loadimpact/k6.
  */
 
-const K6_SCRIPT = path.resolve(__dirname, "..", "..", "performance", "k6", "login_test.js");
+const K6_SCRIPT = path.resolve(
+  __dirname,
+  "..",
+  "..",
+  "performance",
+  "k6",
+  "login_test.js"
+);
 const OUT_DIR = path.resolve(__dirname, "..", "..", "performance", "results");
 const DEFAULT_TIMEOUT = 10 * 60 * 1000; // 10 minutes
 
@@ -47,8 +54,10 @@ function runK6WithEnv(env: NodeJS.ProcessEnv, outName = "result.json") {
   execSync(usedCmd, { stdio: "inherit", env, timeout: DEFAULT_TIMEOUT });
 
   // Validate file
-  if (!fs.existsSync(outJson)) throw new Error(`k6 did not produce expected output: ${outJson}`);
-  if (fs.statSync(outJson).size === 0) throw new Error(`k6 output is empty: ${outJson}`);
+  if (!fs.existsSync(outJson))
+    throw new Error(`k6 did not produce expected output: ${outJson}`);
+  if (fs.statSync(outJson).size === 0)
+    throw new Error(`k6 output is empty: ${outJson}`);
 
   return outJson;
 }
