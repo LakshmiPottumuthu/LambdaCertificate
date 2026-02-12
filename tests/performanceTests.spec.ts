@@ -7,7 +7,9 @@ import path from "path";
  * Runs the k6 performance runner that lives in /performance.
  * Uses the PerformancePage fixture (POM) to supply BASE_URL and credentials.
  */
-test("performanceTests: run k6 scenario and generate report", async ({ performancePage }) => {
+test("performanceTests: run k6 scenario and generate report", async ({
+  performancePage,
+}) => {
   const repoRoot = path.resolve(__dirname, "..");
   const runner = path.resolve(repoRoot, "performance", "run_k6.sh");
   const outDir = path.resolve(repoRoot, "performance", "results");
