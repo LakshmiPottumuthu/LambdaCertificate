@@ -4,6 +4,7 @@ import { SimpleFormDemoPage } from "../pages/SimpleFormDemoPage";
 import { DragDropSliderPage } from "../pages/DragDropSliderPage";
 import { VisualHelper } from "../utility/visual/visual.helper";
 import { LoginPage } from "../pages/LoginPage";
+import { PerformancePage } from "../pages/PerformancePage";
 
 export interface Fixtures {
   homePage: HomePage;
@@ -11,6 +12,7 @@ export interface Fixtures {
   dragDropSliderPage: DragDropSliderPage;
   prepareVisual: () => Promise<void>;
   loginPage: LoginPage;
+  performancePage: PerformancePage;
 }
 
 export const test = base.extend<Fixtures>({
@@ -43,6 +45,11 @@ export const test = base.extend<Fixtures>({
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await use(loginPage);
+  },
+
+  performancePage: async ({ page }, use) => {
+    const performancePage = new PerformancePage(page);
+    await use(performancePage);
   },
 
   simpleFormDemoPage: async ({ page }, use) => {
